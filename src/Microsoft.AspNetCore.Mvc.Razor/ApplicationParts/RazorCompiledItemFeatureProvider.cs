@@ -4,8 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
+using Microsoft.AspNetCore.Razor.Hosting;
 
 namespace Microsoft.AspNetCore.Mvc.ApplicationParts
 {
@@ -36,10 +38,18 @@ namespace Microsoft.AspNetCore.Mvc.ApplicationParts
 
                 foreach (var item in provider.CompiledItems)
                 {
-                    var descriptor = new CompiledViewDescriptor(item, attribute: null);
+                    var descriptor = GetCompiledViewDescriptor(item);
                     feature.ViewDescriptors.Add(descriptor);
                 }
             }
+        }
+
+        private static CompiledViewDescriptor GetCompiledViewDescriptor(RazorCompiledItem item)
+        {
+            var itemAssembly = item.Type.Assembly;
+            var razorViewAttribute = itemAssembly.GetCustomAttributes<RazorViewAttribute>()
+                .FirstOrDefault(attribute => attribute.ViewType == item.Type);
+            return new CompiledViewDescriptor(item, razorViewAttribute);
         }
     }
 }
