@@ -1473,11 +1473,12 @@ namespace Microsoft.AspNetCore.Mvc.Description
                     var bindingInfo = BindingInfo.GetBindingInfo(property.GetCustomAttributes().OfType<object>());
                     if (bindingInfo != null)
                     {
-                        action.BoundProperties.Add(new ParameterDescriptor()
+                        action.BoundProperties.Add(new ControllerBoundPropertyDescriptor()
                         {
                             BindingInfo = bindingInfo,
                             Name = property.Name,
                             ParameterType = property.PropertyType,
+                            PropertyInfo = property
                         });
                     }
                 }
