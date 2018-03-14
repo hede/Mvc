@@ -1,5 +1,5 @@
 {
-  "AssemblyIdentity": "Microsoft.AspNetCore.Mvc.Localization, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60",
+  "AssemblyIdentity": "Microsoft.AspNetCore.Mvc.Localization, Version=2.0.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60",
   "Types": [
     {
       "Name": "Microsoft.AspNetCore.Mvc.Localization.HtmlLocalizer",
@@ -828,62 +828,6 @@
               "Type": "Microsoft.AspNetCore.Hosting.IHostingEnvironment"
             }
           ],
-          "Visibility": "Public",
-          "GenericParameter": []
-        }
-      ],
-      "GenericParameters": []
-    },
-    {
-      "Name": "Microsoft.AspNetCore.Mvc.Localization.Internal.MvcLocalizationServices",
-      "Visibility": "Public",
-      "Kind": "Class",
-      "Abstract": true,
-      "Static": true,
-      "Sealed": true,
-      "ImplementedInterfaces": [],
-      "Members": [
-        {
-          "Kind": "Method",
-          "Name": "AddLocalizationServices",
-          "Parameters": [
-            {
-              "Name": "services",
-              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
-            },
-            {
-              "Name": "format",
-              "Type": "Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat"
-            },
-            {
-              "Name": "setupAction",
-              "Type": "System.Action<Microsoft.Extensions.Localization.LocalizationOptions>"
-            }
-          ],
-          "ReturnType": "System.Void",
-          "Static": true,
-          "Visibility": "Public",
-          "GenericParameter": []
-        },
-        {
-          "Kind": "Method",
-          "Name": "AddMvcLocalizationServices",
-          "Parameters": [
-            {
-              "Name": "services",
-              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
-            },
-            {
-              "Name": "format",
-              "Type": "Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat"
-            },
-            {
-              "Name": "setupAction",
-              "Type": "System.Action<Microsoft.Extensions.Localization.LocalizationOptions>"
-            }
-          ],
-          "ReturnType": "System.Void",
-          "Static": true,
           "Visibility": "Public",
           "GenericParameter": []
         }
